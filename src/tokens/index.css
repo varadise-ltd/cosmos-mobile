@@ -3,8 +3,5 @@
  * Central import for all design tokens
  */
 
-@import './sizes.css';
+@import './numbers.css';
 @import './colors.css';
-@import './semantic.css';
-@import './theme.css';
-@import './components.css';

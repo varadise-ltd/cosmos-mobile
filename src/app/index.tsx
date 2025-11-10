@@ -3,27 +3,27 @@ import { ThemeSwitcher } from '../components/ThemeSwitcher';
 
 export default function Index() {
   return (
-    <ScrollView className="flex-1 bg-neutral-90">
+    <ScrollView className="flex-1 bg-color-surface-brand-default">
       {/* Header */}
-      <View className="p-24 bg-special-bg-mobile">
+      <View className="p-spacing-sizing-24">
         <Text className="text-neutral-0 text-32 font-bold mb-8">Design Tokens</Text>
         <Text className="text-neutral-40 text-16">Showcasing our design system</Text>
       </View>
 
       {/* Theme Switcher */}
-      <View className="p-24">
+      <View className="p-spacing-sizing-24">
         <ThemeSwitcher />
       </View>
 
       {/* Color Showcase */}
-      <View className="p-24">
-        <Text className="text-neutral-0 text-24 font-semibold mb-16">Colors</Text>
+      <View className="p-spacing-sizing-24">
+        <Text className="text-neutral-0 text-24 font-semibold mb-spacing-sizing-16">Colors</Text>
 
         {/* Blue Variants */}
         <View className="mb-20">
           <Text className="text-neutral-20 text-12 mb-8">Blue Scale</Text>
           <View className="flex-row gap-8">
-            <View className="w-48 h-48 bg-blue-60 rounded-md" />
+            <View className="w-48 h-48 bg-blue-60 rounded-radius-pill" />
             <View className="w-48 h-48 bg-blue-70 rounded-md" />
             <View className="w-48 h-48 bg-blue-80 rounded-md" />
             <View className="w-48 h-48 bg-blue-90 rounded-md" />
@@ -39,6 +39,64 @@ export default function Index() {
             <View className="w-48 h-48 bg-neutral-40 rounded-md" />
             <View className="w-48 h-48 bg-neutral-60 rounded-md" />
             <View className="w-48 h-48 bg-neutral-80 rounded-md" />
+          </View>
+        </View>
+       
+        {/* Surface accent-blue Variants */}
+        <View className="mb-20">
+          <Text className="text-neutral-20 text-12 mb-8">Surface Accent Blue Token</Text>
+          <View className="flex-row gap-8">
+            <View className="w-48 h-48 bg-yellow- rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-blue-bolder rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-blue-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-blue-mild rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-blue-strong rounded-md" />
+          </View>
+        </View>
+
+        {/* Surface cyan Variants */}
+        <View className="mb-20">
+          <Text className="text-neutral-20 text-12 mb-8">Surface Accent Cyan Token</Text>
+          <View className="flex-row gap-8">
+            <View className="w-48 h-48 bg-color-surface-accent-cyan-bold rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-cyan-bolder rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-cyan-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-cyan-mild rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-cyan-strong rounded-md" />
+          </View>
+        </View>
+        {/* Surface brand Variants */}
+        <View className="mb-20">
+          <Text className="text-neutral-20 text-12 mb-8">Surface brand Cyan Token</Text>
+          <View className="flex-row gap-8">
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-bold rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-mild rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-strong rounded-md" />
+          </View>
+        </View>
+        
+        {/* Surface brand Variants */}
+        <View className="mb-20">
+          <Text className="text-neutral-20 text-12 mb-8">Surface brand Cyan Token</Text>
+          <View className="flex-row gap-8">
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-bold rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-mild rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-strong rounded-md" />
+          </View>
+        </View>
+        {/* Surface brand Variants */}
+        <View className="mb-20">
+          <Text className="text-neutral-20 text-12 mb-8">Surface brand Cyan Token</Text>
+          <View className="flex-row gap-8">
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-bold rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-default rounded-md" />
+            <View className="w-48 h-48 bg-color-surface-accent-yellow-mild rounded-md" />
+            <View className="w-48 h-48 bg-yellow-999 rounded-md" />
           </View>
         </View>
 
@@ -60,7 +118,7 @@ export default function Index() {
       </View>
 
       {/* Spacing Showcase */}
-      <View className="p-24 bg-neutral-100">
+      <View className="p-spacing-sizing-24 bg-neutral-100">
         <Text className="text-neutral-0 text-24 font-semibold mb-16">Spacing</Text>
 
         <View className="mb-20">
@@ -73,7 +131,7 @@ export default function Index() {
             <View className="h-32 bg-blue-60 rounded-md" />
             <View className="h-32 bg-cyan-60 rounded-md" />
           </View>
-          <View className="gap-24">
+          <View className="gap-spacing-sizing-24">
             <View className="h-32 bg-blue-60 rounded-md" />
             <View className="h-32 bg-cyan-60 rounded-md" />
           </View>
@@ -92,15 +150,15 @@ export default function Index() {
             </View>
           </View>
           <View className="bg-white-alpha-10 rounded-md">
-            <View className="p-24 bg-purple-60 rounded-md">
-              <Text className="text-neutral-0 text-12">p-24</Text>
+            <View className="p-spacing-sizing-24 bg-purple-60 rounded-md">
+              <Text className="text-neutral-0 text-12">p-spacing-sizing-24</Text>
             </View>
           </View>
         </View>
       </View>
 
       {/* Alpha Colors Showcase */}
-      <View className="p-24">
+      <View className="p-spacing-sizing-24">
         <Text className="text-neutral-0 text-24 font-semibold mb-16">Alpha Colors</Text>
 
         <View className="mb-20">
@@ -129,7 +187,7 @@ export default function Index() {
       </View>
 
       {/* Component Tokens */}
-      <View className="p-24 bg-neutral-100">
+      <View className="p-spacing-sizing-24 bg-neutral-100">
         <Text className="text-neutral-0 text-24 font-semibold mb-16">Component Tokens</Text>
 
         {/* Avatar Colors */}
@@ -257,7 +315,7 @@ export default function Index() {
       </View>
 
       {/* Card Examples */}
-      <View className="p-24">
+      <View className="p-spacing-sizing-24">
         <Text className="text-neutral-0 text-24 font-semibold mb-16">Card Examples</Text>
 
         <View className="gap-16">
