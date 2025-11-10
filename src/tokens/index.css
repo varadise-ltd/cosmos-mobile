@@ -1,0 +1,8 @@
+/**
+ * Design System Tokens
+ * Central import for all design tokens
+ */
+
+@import './sizes.css';
+@import './colors.css';
+@import './semantic.css';
