@@ -2,18 +2,15 @@ import { GlassEffectContainer, Host } from '@expo/ui/swift-ui';
 import { glassEffect } from '@expo/ui/swift-ui/modifiers';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { cssInterop } from 'nativewind';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { MaterialProps } from './types';
 
 cssInterop(Material, {
   className: 'style',
 });
 
-export default function Material({
-  children,
-  style,
-  className,
-}: MaterialProps) {
+export default function Material(props: MaterialProps) {
+  const { children, style } = props;
   const bgColor = StyleSheet.flatten(style)?.backgroundColor;
 
   if (isLiquidGlassAvailable()) {
@@ -36,10 +33,6 @@ export default function Material({
       </Host>
     );
   } else {
-    return (
-      <View>
-        <Text>No glass effect available</Text>
-      </View>
-    );
+    return <View {...props} />;
   }
 }
