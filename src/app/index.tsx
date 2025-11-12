@@ -1,5 +1,12 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
+import Material from './components/shared/Material';
 
 export default function Index() {
-  return <ScrollView className="flex-1 bg-color-surface-fg-primary"></ScrollView>;
+  return (
+    <ScrollView className="flex-1 bg-color-surface-fg-primary">
+      <Material size={'default'}>
+        <Text>Hello World</Text>
+      </Material>
+    </ScrollView>
+  );
 }
