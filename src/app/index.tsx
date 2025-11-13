@@ -1,5 +1,5 @@
+import Material from '@/components/shared/Material';
 import { ScrollView, Text } from 'react-native';
-import Material from './components/shared/Material';
 
 export default function Index() {
   return (
