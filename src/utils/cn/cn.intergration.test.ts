@@ -351,8 +351,9 @@ describe('cn utility - Integration Tests', () => {
 
     it('handles component with multiple conditional states', () => {
       const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-colors';
-      const variant: 'primary' | 'secondary' | 'outline' = 'primary';
-      const size: 'small' | 'medium' | 'large' = 'large';
+      // Using variables that could change at runtime (simulating props)
+      const variant = 'primary' as 'primary' | 'secondary' | 'outline';
+      const size = 'large' as 'small' | 'medium' | 'large';
       const isDisabled = false;
       const isLoading = true;
 
