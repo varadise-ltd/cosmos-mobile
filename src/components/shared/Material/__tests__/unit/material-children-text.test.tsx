@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import Material from '../material';
+import { Text } from 'react-native';
+import Material from '../../material';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -19,9 +20,13 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Undefined Children', () => {
-  it('renders correctly when children is undefined', () => {
-    const component = render(<Material size="default">{undefined}</Material>);
-    expect(component).toBeTruthy();
+describe('Material Component - Text Children', () => {
+  it('renders with text children', () => {
+    const { getByText } = render(
+      <Material size="default">
+        <Text>Plain text content</Text>
+      </Material>
+    );
+    expect(getByText('Plain text content')).toBeTruthy();
   });
 });

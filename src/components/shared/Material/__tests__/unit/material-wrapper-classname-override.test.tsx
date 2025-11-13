@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
 import { Text } from 'react-native';
-import Material from '../material';
+import Material from '../../index';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -20,13 +20,18 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Default Props', () => {
-  it('renders with default props', () => {
-    const { getByText } = render(
-      <Material size="default">
+describe('Material Wrapper - ClassName Override', () => {
+  it('overrides default className when custom bg-color- class is provided', () => {
+    const { getByTestId } = render(
+      <Material size="default" className="bg-color-custom-bg" testID="material-wrapper">
         <Text>Test Content</Text>
       </Material>
     );
-    expect(getByText('Test Content')).toBeTruthy();
+    
+    const materialComponent = getByTestId('material-wrapper');
+    expect(materialComponent).toBeTruthy();
+    expect(materialComponent.props.className).toContain('bg-color-custom-bg');
+    // Note: cn utility from tailwind-merge should handle the override
+    // The exact behavior depends on the cn utility implementation
   });
 });

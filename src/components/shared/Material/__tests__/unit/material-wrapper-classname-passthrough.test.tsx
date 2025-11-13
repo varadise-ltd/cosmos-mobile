@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
 import { Text } from 'react-native';
-import Material from '../material';
+import Material from '../../index';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -20,13 +20,16 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Single Child', () => {
-  it('renders with single child element', () => {
-    const { getByText } = render(
-      <Material size="default">
-        <Text>Single Child</Text>
+describe('Material Wrapper - ClassName Passthrough', () => {
+  it('passes className prop from wrapper to material component', () => {
+    const { getByTestId } = render(
+      <Material size="default" className="custom-test-class" testID="material-wrapper">
+        <Text>Test Content</Text>
       </Material>
     );
-    expect(getByText('Single Child')).toBeTruthy();
+    
+    const materialComponent = getByTestId('material-wrapper');
+    expect(materialComponent).toBeTruthy();
+    expect(materialComponent.props.className).toContain('custom-test-class');
   });
 });

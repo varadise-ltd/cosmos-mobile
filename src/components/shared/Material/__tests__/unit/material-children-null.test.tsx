@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import { Text } from 'react-native';
-import Material from '../material';
+import Material from '../../material';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -20,13 +19,9 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Custom ClassName', () => {
-  it('renders with custom className', () => {
-    const { getByText } = render(
-      <Material size="default" className="custom-class">
-        <Text>Test Content</Text>
-      </Material>
-    );
-    expect(getByText('Test Content')).toBeTruthy();
+describe('Material Component - Null Children', () => {
+  it('renders correctly when children is null', () => {
+    const component = render(<Material size="default">{null}</Material>);
+    expect(component).toBeTruthy();
   });
 });

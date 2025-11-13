@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import Material from '../material';
+import { Text } from 'react-native';
+import Material from '../../material';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -19,9 +20,13 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Basic Rendering', () => {
-  it('renders without crashing with no props', () => {
-    const component = render(<Material size="default" />);
-    expect(component).toBeTruthy();
+describe('Material Component - Single Child', () => {
+  it('renders with single child element', () => {
+    const { getByText } = render(
+      <Material size="default">
+        <Text>Single Child</Text>
+      </Material>
+    );
+    expect(getByText('Single Child')).toBeTruthy();
   });
 });

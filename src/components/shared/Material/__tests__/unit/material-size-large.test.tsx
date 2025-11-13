@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import { Text, View } from 'react-native';
-import Material from '../material';
+import { Text } from 'react-native';
+import Material from '../../material';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -20,19 +20,14 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component - Multiple Children', () => {
-  it('renders with multiple children', () => {
+describe('Material Component - Size Large', () => {
+  it('renders with size="large"', () => {
     const { getByText } = render(
-      <Material size="default">
-        <Text>First Child</Text>
-        <Text>Second Child</Text>
-        <View>
-          <Text>Third Child</Text>
-        </View>
+      <Material size="large">
+        <Text>Size Large</Text>
       </Material>
     );
-    expect(getByText('First Child')).toBeTruthy();
-    expect(getByText('Second Child')).toBeTruthy();
-    expect(getByText('Third Child')).toBeTruthy();
+
+    expect(getByText('Size Large')).toBeTruthy();
   });
 });

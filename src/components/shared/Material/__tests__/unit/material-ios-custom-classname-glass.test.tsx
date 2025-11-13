@@ -30,7 +30,7 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-import Material from '../material.ios';
+import Material from '../../material.ios';
 
 describe('Material Component iOS - Custom ClassName with Glass', () => {
   it('renders with custom className alongside Liquid Glass', () => {

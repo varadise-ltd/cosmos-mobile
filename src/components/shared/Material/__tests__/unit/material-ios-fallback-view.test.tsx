@@ -3,9 +3,9 @@ import { render } from '@testing-library/react-native';
 import React from 'react';
 import { Text } from 'react-native';
 
-// Mock expo-glass-effect - set to return true for Liquid Glass availability
+// Mock expo-glass-effect - set to return FALSE for Liquid Glass availability
 jest.mock('expo-glass-effect', () => ({
-  isLiquidGlassAvailable: jest.fn(() => true),
+  isLiquidGlassAvailable: jest.fn(() => false),
 }));
 
 // Mock @expo/ui/swift-ui with proper components
@@ -30,16 +30,21 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-import Material from '../material.ios';
+import Material from '../../material.ios';
 
-describe('Material Component iOS - Children Inside Glass', () => {
-  it('renders children inside GlassEffectContainer', () => {
-    const { getByText } = render(
-      <Material size="default">
-        <Text>Child Content</Text>
+describe('Material Component iOS - Fallback View', () => {
+  it('renders fallback View when Liquid Glass is unavailable', () => {
+    const { queryByTestId, getByText } = render(
+      <Material size="default" testID="fallback-view">
+        <Text>Test Content</Text>
       </Material>
     );
 
-    expect(getByText('Child Content')).toBeTruthy();
+    // Glass components should not be rendered
+    expect(queryByTestId('glass-effect-container')).toBeNull();
+    expect(queryByTestId('host-container')).toBeNull();
+    
+    // Fallback View should render with testID
+    expect(getByText('Test Content')).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
 import { Text } from 'react-native';
-import Material from '../material';
+import Material from '../../material';
 
 // Mock expo-glass-effect
 jest.mock('expo-glass-effect', () => ({
@@ -20,14 +20,14 @@ jest.mock('nativewind', () => ({
   cssInterop: jest.fn(),
 }));
 
-describe('Material Component Default - View Component', () => {
-  it('renders standard View component', () => {
-    const { getByTestId } = render(
-      <Material size="default" testID="material-view">
-        <Text>Test Content</Text>
+describe('Material Component - Size Default', () => {
+  it('renders with size="default"', () => {
+    const { getByText } = render(
+      <Material size="default">
+        <Text>Size Default</Text>
       </Material>
     );
 
-    expect(getByTestId('material-view')).toBeTruthy();
+    expect(getByText('Size Default')).toBeTruthy();
   });
 });
