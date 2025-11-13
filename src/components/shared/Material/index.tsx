@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn/cn';
+import { cn } from '@/utils';
 import InternalMaterial from './material';
 import { MaterialProps } from './types';
 
