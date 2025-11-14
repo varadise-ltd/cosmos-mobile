@@ -18,7 +18,7 @@ export default function Material(props: MaterialProps) {
   if (isLiquidGlassAvailable()) {
     return (
       // Host wrapper is required by @expo/ui
-      <Host>
+      <Host matchContents>
         <GlassEffectContainer
           modifiers={[
             glassEffect({

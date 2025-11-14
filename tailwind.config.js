@@ -23,6 +23,8 @@ module.exports = {
         colors: '^color-',
         borderRadius: '^radius-',
         spacing: '^spacing-',
+        fontSize: '^size-',
+        letterSpacing: '^tracking-',
       },
       debug: false, // Set to true to see debug logs
     }),

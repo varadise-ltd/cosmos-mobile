@@ -10,3 +10,5 @@ export default function Material({ className, ...props }: MaterialProps) {
     />
   );
 }
+
+export { Material };
